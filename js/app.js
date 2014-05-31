@@ -9,19 +9,22 @@
       name: 'Dodecahedron',
       price: 2,
       description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid architecto consectetur deserunt dignissimos, dolore, esse hic ipsum laborum molestiae mollitia nulla numquam obcaecati optio perspiciatis quibusdam soluta? Dicta, mollitia!',
-      canPurchase: true
+      canPurchase: true,
+      img: "gem-01.gif"
     },
     {
       name: 'Pentagonal Gem',
       price: 5.95,
       description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid architecto consectetur deserunt dignissimos, dolore, esse hic ipsum laborum molestiae mollitia nulla numquam obcaecati optio perspiciatis quibusdam soluta? Dicta, mollitia!',
-      canPurchase: false
+      canPurchase: false,
+      img: "gem-02.gif"
     },
     {
       name: 'Dodecahedron',
       price: 2.95,
       description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid architecto consectetur deserunt dignissimos, dolore, esse hic ipsum laborum molestiae mollitia nulla numquam obcaecati optio perspiciatis quibusdam soluta? Dicta, mollitia!',
-      canPurchase: true
+      canPurchase: true,
+      img: "gem-03.gif"
     }
   ]
 
