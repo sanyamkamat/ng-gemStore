@@ -8,6 +8,7 @@
 </head>
 <body class="container" ng-controller="StoreController as store">
 <h1 class="text-center">Flatlander Crafter Gems</h1>
+
 <h2 class="text-center">- an Angular store -</h2>
 <ul class="list-group">
   <li class="list-group-item" ng-repeat="product in store.products">
@@ -15,8 +16,15 @@
       {{product.name}}
       <em class="pull-right">{{product.price | currency}}</em>
     </h3>
-
     <img ng-src="images/{{product.img}}" alt="{{product.name}}" class="center-block"/>
+    <section>
+      <ul class="nav nav-pills">
+        <li><a href="" ng-click="tab = 1">Description</a></li>
+        <li><a href="" ng-click="tab = 2">Specifications</a></li>
+        <li><a href="" ng-click="tab = 3">Reviews</a></li>
+      </ul>
+      {{tab}}
+    </section>
   </li>
 </ul>
 </body>
