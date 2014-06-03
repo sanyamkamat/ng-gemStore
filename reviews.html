@@ -39,26 +39,28 @@
           {{review.body}}
           <cite>by: {{review.author}}</cite>
         </blockquote>
-        <form>
+        <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(product)">
           <blockquote>
-            <b ng-show="review.stars">{{review.stars + " Stars "}}</b>
-            {{review.body}}
-            <cite ng-show="review.author">by: {{review.author}}</cite>
+            <b ng-show="reviewCtrl.review.stars">{{reviewCtrl.review.stars + " Stars "}}</b>
+            {{reviewCtrl.review.body}}
+            <cite ng-show="reviewCtrl.review.author">by: {{reviewCtrl.review.author}}</cite>
           </blockquote>
 
           <h4>Submit a Review</h4>
           <fieldset class="form-group">
             <select class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars"
-                    ng-model="review.stars">
+                    ng-model="reviewCtrl.review.stars">
               <option value="">Rate the Product</option>
             </select>
           </fieldset>
           <fieldset class="form-group">
-            <textarea class="form-control" placeholder="Write a short review of the product..." ng-model="review.body"
+            <textarea class="form-control" placeholder="Write a short review of the product..."
+                      ng-model="reviewCtrl.review.body"
                       title="Review"></textarea>
           </fieldset>
           <fieldset class="form-group">
-            <input ng-model="review.author" type="email" class="form-control" placeholder="jimmyDean@example.org"
+            <input ng-model="reviewCtrl.review.author" type="email" class="form-control"
+                   placeholder="jimmyDean@example.org"
                    title="Email"/>
           </fieldset>
           <fieldset class="form-group">
