@@ -87,4 +87,18 @@
     }
   });
 
+  app.directive('productTitle',function(){
+    return {
+      restrict: 'E',
+      templateUrl: 'partials/product-title.html'
+    };
+  });
+
+  app.directive('productTitles',function(){
+    return {
+      restrict: 'A',
+      templateUrl: 'partials/product-title.html'
+    };
+  });
+
 })();
