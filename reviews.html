@@ -40,7 +40,7 @@
           {{review.body}}
           <cite>by: {{review.author}}</cite>
         </blockquote>
-        <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$novalidate && reviewCtrl.addReview(product)" novalidate>
+        <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
           <blockquote>
             <b ng-show="reviewCtrl.review.stars">{{reviewCtrl.review.stars + " Stars "}}</b>
             {{reviewCtrl.review.body}}
