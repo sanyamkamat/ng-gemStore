@@ -68,6 +68,7 @@
     this.products = gems;
   });
 
+  /* Moving this controller inside the productPanels directive */ /*
   app.controller('PanelController', function () {
     this.tab = 1;
     this.selectTab = function (setTab) {
@@ -76,7 +77,7 @@
     this.isSelected = function (checkTab) {
       return this.tab === checkTab;
     }
-  });
+  });*/
 
   app.controller('ReviewController',function(){
     this.review = {};
@@ -99,6 +100,23 @@
       restrict: 'A',
       templateUrl: 'partials/product-title.html'
     };
+  });
+
+  app.directive('productPanels',function(){
+    return {
+      restrict: 'A',
+      templateUrl: 'partials/product-panels.html',
+      controller: function () {
+        this.tab = 1;
+        this.selectTab = function (setTab) {
+          this.tab = setTab;
+        };
+        this.isSelected = function (checkTab) {
+          return this.tab === checkTab;
+        }
+      },
+      controllerAs: 'panel'
+    }
   });
 
 })();
