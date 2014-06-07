@@ -2,7 +2,6 @@
  * Created by Sam on 5/31/2014.
  */
 (function () {
-  var app = angular.module('gemStore', []);
 
   var gems = [
     {
@@ -64,6 +63,8 @@
     }
   ]
 
+  var app = angular.module('gemStore', ['store-products']);
+
   app.controller("StoreController", function () {
     this.products = gems;
   });
@@ -85,37 +86,6 @@
     this.addReview = function(product){
       product.reviews.push(this.review);
       this.review = {};
-    }
-  });
-
-  app.directive('productTitle',function(){
-    return {
-      restrict: 'E',
-      templateUrl: 'partials/product-title.html'
-    };
-  });
-
-  app.directive('productTitles',function(){
-    return {
-      restrict: 'A',
-      templateUrl: 'partials/product-title.html'
-    };
-  });
-
-  app.directive('productPanels',function(){
-    return {
-      restrict: 'A',
-      templateUrl: 'partials/product-panels.html',
-      controller: function () {
-        this.tab = 1;
-        this.selectTab = function (setTab) {
-          this.tab = setTab;
-        };
-        this.isSelected = function (checkTab) {
-          return this.tab === checkTab;
-        }
-      },
-      controllerAs: 'panel'
     }
   });
 
