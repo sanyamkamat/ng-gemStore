@@ -3,71 +3,31 @@
  */
 (function () {
 
-  var gems = [
-    {
-      name: 'Dodecahedron',
-      price: 2,
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid architecto consectetur deserunt dignissimos, dolore, esse hic ipsum laborum molestiae mollitia nulla numquam obcaecati optio perspiciatis quibusdam soluta? Dicta, mollitia!',
-      canPurchase: true,
-      img: "gem-01.gif",
-      reviews: [
-        {
-          stars: 5,
-          body: "I love this product!",
-          author: "joe@thomas.com"
-        },
-        {
-          stars: 1,
-          body: "This product sucks",
-          author: "tim@hater.com"
-        }
-      ]
-    },
-    {
-      name: 'Pentagonal Gem',
-      price: 5.95,
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid architecto consectetur deserunt dignissimos, dolore, esse hic ipsum laborum molestiae mollitia nulla numquam obcaecati optio perspiciatis quibusdam soluta? Dicta, mollitia!',
-      canPurchase: false,
-      img: "gem-02.gif",
-      reviews: [
-        {
-          stars: 4,
-          body: "I love this product!",
-          author: "joe@thomas.com"
-        },
-        {
-          stars: 2,
-          body: "This product sucks",
-          author: "tim@hater.com"
-        }
-      ]
-    },
-    {
-      name: 'Dodecahedron',
-      price: 2.95,
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid architecto consectetur deserunt dignissimos, dolore, esse hic ipsum laborum molestiae mollitia nulla numquam obcaecati optio perspiciatis quibusdam soluta? Dicta, mollitia!',
-      canPurchase: true,
-      img: "gem-03.gif",
-      reviews: [
-        {
-          stars: 3,
-          body: "I love this product!",
-          author: "joe@thomas.com"
-        },
-        {
-          stars: 1,
-          body: "This product sucks",
-          author: "tim@hater.com"
-        }
-      ]
-    }
-  ]
-
   var app = angular.module('gemStore', ['store-products']);
 
-  app.controller("StoreController", function () {
-    this.products = gems;
-  });
+  app.controller("StoreController", ['$http', function ($http) {
+    var store = this;
+
+    store.products = [];
+
+    $http.get('products.json').success(function (data) {
+      store.products = data;
+    });
+
+    /* Examples of other http requests */
+    /*
+     $http.post('path/to/resource.json',{"param":"value"});
+
+     $http.delete('path/to/resource.json');
+
+     $http({method: 'OPTIONS',url: 'path/to/resource.json'});
+
+     $http({method: 'PATCH',url: 'path/to/resource.json'});
+
+     $http({method: 'TRACE',url: 'path/to/resource.json'});
+
+     */
+  }]);
 
   /* Moving this controller inside the productPanels directive */ /*
   app.controller('PanelController', function () {
