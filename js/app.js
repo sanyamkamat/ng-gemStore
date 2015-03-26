@@ -29,7 +29,7 @@
      */
   }]);
 
-  /* Moving this controller inside the productPanels directive */ /*
+  /* Moving this controller inside the productPanels directive */ 
   app.controller('PanelController', function () {
     this.tab = 1;
     this.selectTab = function (setTab) {
@@ -38,7 +38,7 @@
     this.isSelected = function (checkTab) {
       return this.tab === checkTab;
     }
-  });*/
+  });
 
   app.controller('ReviewController',function(){
     this.review = {};

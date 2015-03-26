@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="gemStore">
+<head>
+  <title>Gem Store</title>
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+  <script type="text/javascript" src="js/angular.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/products.js"></script>
+</head>
+<body class="container" ng-controller="StoreController as store">
+<h2>Date - {{'1399799939999' | date: 'MM/dd/yyyy @ h:mma'}}</h2>
+
+<h2>Uppercase - {{'vAlAr MuHgOlIs' | uppercase}}</h2>
+
+<h2>Limit To - {{'My Description' | limitTo: 8}}</h2>
+
+<h2>Limit To in Products - ng-repeat="product in store.products | limitTo : 10"</h2>
+<h2>Order By in Products - ng-repeat="product in store.products | orderBy : '-price' "</h2>
+
+<hr>
+<div ng-repeat="product in store.products | limitTo : 3 | orderBy: '-price' ">
+  <h1>{{product.name}}</h1>
+
+  <h2>{{product.price | currency}}</h2>
+
+  <p>{{product.description}}</p>
+  <button ng-show="product.canPurchase">Add to Cart</button>
+</div>
+</body>
+</html>
