@@ -1,0 +1,6 @@
+{
+  "name": "Ng-gemstore",
+  "tagline": "A Gem Store app using AngularJS",
+  "body": "ng-gemStore\r\n===========\r\n\r\nA Gem Store app using AngularJS\r\n\r\nDirectives used till now\r\n  ng-app\r\n  ng-conroller\r\n  ng-repeat\r\n  ng-show/hide\r\n  ng-model\r\n  ng-include",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
